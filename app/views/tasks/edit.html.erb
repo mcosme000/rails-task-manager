@@ -1,8 +1,4 @@
-
-<div class="d-flex justify-content-between align-items-center">
-  <h1>Create a new task</h1>
-  <%= link_to "Go back to tasks", tasks_path, :class => 'btn btn-secondary' %>
-</div>
+<h1>Edit task <%= @task.title %></h1>
 
 <%= form_with model: @task do |f| %>
   <div class="form-group mb-3">
@@ -12,6 +8,10 @@
   <div class="form-group mb-3">
     <%= f.label :details %>
     <%= f.text_field :details, :class => 'form-control' %>
+  </div>
+  <div class="form-group mb-3">
+    <%= f.check_box :completed %>
+    <%= f.label :completed %>
   </div>
   <%= f.submit :class => 'btn btn-primary' %>
 <% end %>

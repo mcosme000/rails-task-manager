@@ -1,9 +1,15 @@
-<h1>My tasks</h1>
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1>My tasks</h1>
+  <%= link_to "Add a new task", tasks_new_path, :class => 'btn btn-success mb-3' %>
+</div>
 
-<%= link_to "Add a new task", tasks_new_path %>
+
 
 <ul class="list-group">
   <% @tasks.each_with_index do |task, index| %>
-    <li class="list-group-item list-group-item-action"><%= index + 1  %>. <%= link_to task.title, task_path(task) %></li>
+    <li class="list-group-item list-group-item-action">
+      <%= task.completed ? "✅" : "⬜️" %>
+      <%= index + 1  %>. <%= link_to task.title, task_path(task) %>
+    </li>
   <% end %>
 </ul>
