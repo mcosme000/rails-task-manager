@@ -1,0 +1,7 @@
+<h1>My tasks</h1>
+
+<ul>
+  <% @tasks.each_with_index do |task, index| %>
+    <li><%= index + 1  %>. <%= task.title %></li>
+  <% end %>
+</ul>
