@@ -1,7 +1,9 @@
 <h1>My tasks</h1>
 
-<ul>
+<%= link_to "Add a new task", tasks_new_path %>
+
+<ul class="list-group">
   <% @tasks.each_with_index do |task, index| %>
-    <li><%= index + 1  %>. <%= link_to task.title, task_path(task) %></li>
+    <li class="list-group-item list-group-item-action"><%= index + 1  %>. <%= link_to task.title, task_path(task) %></li>
   <% end %>
 </ul>
